@@ -41,4 +41,23 @@ export class GptController {
   translateText(@Body() translateDto: TranslateDto) {
     return this.gptService.translateText(translateDto);
   }
+
+  @Post('translate-stream')
+  async translateTextStream(
+    @Body() translateDto: TranslateDto,
+    @Res() res: Response,
+  ) {
+    const stream = await this.gptService.translateTextStream(translateDto);
+
+    res.setHeader('Content-Type', 'application/json');
+    res.status(HttpStatus.OK);
+
+    for await (const chunk of stream) {
+      const piece = chunk.choices[0].delta.content ?? '';
+
+      res.write(piece);
+    }
+
+    res.end();
+  }
 }
