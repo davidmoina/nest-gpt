@@ -1,14 +1,14 @@
-import { IsBase64, IsOptional, IsString } from 'class-validator';
+import { IsOptional, IsString } from 'class-validator';
 
 export class ImageGenerationDto {
   @IsString()
   readonly prompt: string;
 
-  @IsBase64()
+  @IsString()
   @IsOptional()
   readonly originalImage?: string;
 
-  @IsBase64()
+  @IsString()
   @IsOptional()
   readonly maskImage?: string;
 }
