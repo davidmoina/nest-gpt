@@ -16,7 +16,7 @@ Is the backend for the react gpt app
 2. Install dependencies
 
 ```bash
-$ yarn install
+$ npm install
 ```
 
 3. Copy .env file and put your variables
@@ -25,24 +25,24 @@ $ yarn install
 
 ```bash
 # development
-$ yarn run start
+$ npm run start
 
 # watch mode
-$ yarn run start:dev
+$ npm run start:dev
 
 # production mode
-$ yarn run start:prod
+$ npm run start:prod
 ```
 
 ## Test
 
 ```bash
 # unit tests
-$ yarn run test
+$ npm run test
 
 # e2e tests
-$ yarn run test:e2e
+$ npm run test:e2e
 
 # test coverage
-$ yarn run test:cov
+$ npm run test:cov
 ```
